@@ -8,7 +8,7 @@
   },
   "name": "fbpage-chatbot",
   "description": "An fast client, secure, efficient, and feature-rich AI-based facebook page chat-bot system for lakestonians for fast communicating and auto-messaging system made in Javascript and NodeJS.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/Loader.js",
   "scripts": {
     "start": "node src/Loader.js"

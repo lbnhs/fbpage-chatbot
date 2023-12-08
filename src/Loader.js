@@ -58,11 +58,12 @@ for (const folder of modulesFolders) {
 }
 
 
-const Updater = require(__dirname + "\/Updater.js");
-const Logger = require(__dirname + "\/Logger.js");
+const Updater = require(__dirname + "\/utils\/Updater.js");
+const Logger = require(__dirname + "\/utils\/Logger.js");
 const MainLogger = new Logger({
 	log_folder: "./logs/",
 	thread_name: "Main", // we're on main thread.
+	debug: process.env.debug || false
 });
 
 function getLogger() {

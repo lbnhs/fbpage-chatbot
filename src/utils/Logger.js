@@ -99,6 +99,7 @@ class Logger {
 	}
 	
 	debug(message){
+		if(this.debug == false) return;
 		this.writeLog(this.log(message, DEBUG, false));
 		this.writeConsole(this.log(message, DEBUG, true));
 	}

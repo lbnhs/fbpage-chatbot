@@ -26,24 +26,32 @@
  * You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
  *
  */
- 
-module.exports = (bot) => {
-	bot.hear('Get started', (payload, chat) => {
-		const buttons = [
-			{ type: 'postback', title: 'School Information', payload: 'SCHOOL_INFORMATION' },
-			{ type: 'postback', title: 'Enrollment Requirements', payload: 'SCHOOL_ENROLL' },
-			{ type: 'postback', title: 'School Updates', payload: 'SCHOOL_UPDATES' }
-		];
-		chat.getUserProfile().then((user) => {
-			chat.sendButtonTemplate(`Hi, ${user.first_name}! I'm Mr. AI Tonian!\nI'm your friendly neighbourhood chatbot.\nI'm here to assist you about your concerns in our school.\n\nChoose topic here below what do you want to talk.`, buttons);
-		});
-	});
+
+const fs = require('fs');
+
+class DataHandler {
 	
-	bot.on('postback:SCHOOL_ENROLL', (payload, chat) => {
-		chat.say(`For assistance look for administrators and teachers.\n\nREQUIREMENTS:\n\n• Form 137\n• Highschool Card\n• Academic Records\n• Photocopy of PSA/NSO birth certificate\n• Certificate of good moral\n\nThe enrollment will be held in Lawang bato National Highschool covered court.`);
-	});
-  
-	bot.on('postback:SCHOOL_UPDATES', (payload, chat) => {
-		chat.say(`To be announce..`);
-	});
-};
+	constructor(loader, logger){
+		this.loader = loader;
+		this.logger = logger;
+	}
+	
+	getFileContentsAsync(path){
+		fs.readFile(path, (err, data) => { 
+			if(err) { 
+				this.logger.error("An error occured while reading the file: " + err);
+			} 
+			return data.toString(); 
+		}); 
+	}
+	
+	getFileContentsAsync(path){
+		try{ 
+			return fs.readFileSync(path).data.toString(); 
+		} catch (err) { 
+			this.logger.error("An error occured while reading the file: " + err);
+		} 
+	}
+}
+
+module.exports = DataHandler;
