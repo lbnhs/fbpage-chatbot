@@ -4,6 +4,8 @@ An fast client, secure, efficient, and feature-rich AI-based facebook page chat-
 
 **This program is to be on testing/development, If you found a bug or issue, kindly create an issue, and wait for response of the developers.**
 
+[![](https://raw.githubusercontent.com/lbnhs/fbpage-chatbot/master/example.jpg)](https://github.com/lbnhs/fbpage-chatbot)
+
 # Our Targets
 **These are the targets of our program to be intended of use:**
 - Enrollment information, and School activities.
