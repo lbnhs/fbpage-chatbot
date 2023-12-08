@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "bootbot": "^1.1.0",
+    "chalk": "^4.1.2",
+    "console-stamp": "^3.1.2",
+    "dotenv": "^16.3.1",
+    "fs": "^0.0.1-security"
+  },
+  "name": "fbpage-chatbot",
+  "description": "An fast client, secure, efficient, and feature-rich AI-based facebook page chat-bot system for lakestonians for fast communicating and auto-messaging system made in Javascript and NodeJS.",
+  "version": "0.0.1",
+  "main": "src/Loader.js",
+  "scripts": {
+    "start": "node src/Loader.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbnhs/fbpage-chatbot.git"
+  },
+  "keywords": [
+    "chatbot",
+    "facebook-chatbot",
+    "fb-chatbot",
+    "lakestonians"
+  ],
+  "author": "lbnhs",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/lbnhs/fbpage-chatbot/issues"
+  },
+  "homepage": "https://github.com/lbnhs/fbpage-chatbot#readme"
+}
