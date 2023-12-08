@@ -31,7 +31,7 @@ module.exports = {
 	Check(currentVersion, MainLogger){
 		const fetch = require('node-fetch');
 		// These where magic happends...
-			fetch("https://raw.githubusercontent.com/lbnhs/fbpage-chatbot/master/package.json")
+			fetch("https://raw.githubusercontent.com/lbnhs/fbpage-chatbot/main/package.json")
 				.then(res => res.json())
 				.then(json => {
 					if(json.version != currentVersion){
