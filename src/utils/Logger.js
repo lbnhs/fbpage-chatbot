@@ -104,6 +104,12 @@ class Logger {
 		this.writeConsole(this.log(message, DEBUG, true));
 	}
 	
+	warning(message){
+		if(this.debug == false) return;
+		this.writeLog(this.log(message, WARNING, false));
+		this.writeConsole(this.log(message, WARNING, true));
+	}
+	
 	log(text, type, hasColor){
 		var date = new Date().toISOString().substring(11,23);
 		
