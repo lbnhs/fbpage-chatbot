@@ -29,6 +29,7 @@
 
 const fs = require('fs');
 const chalk = require('chalk');
+const path = require('path');
 
 // Available Logging Options
 	const INFO = 0;
@@ -53,8 +54,13 @@ class Logger {
 	
 	// Writes logs from the disk.
 	writeLog(text){
-		var date = new Date();
-		
+		var date = new Date();	
+		fs.appendFile(path.resolve(this.log_folder + "console-" + date.toDateString().split(' ').join('-') + ".log"), text + "\n", (err) => { 
+			if(err) { 
+				var message = "An error occured while saving the logs: " + err;
+				this.writeConsole(this.log(message, ERROR, true));
+			}
+		});
 	}
 	
 	// Writes logs to the console with colors.

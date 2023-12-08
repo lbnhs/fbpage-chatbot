@@ -76,7 +76,7 @@ function getLogger() {
 getLogger().info("Starting Mr. AI Tonian...");
 getLogger().notice("Running update checker...");
 
-Updater.Check(require('../package.json').version);
+Updater.Check(require('../package.json').version, getLogger());
 
 bot.start(8080); // Run Webhook in Port: 8080
 
