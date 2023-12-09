@@ -8,7 +8,7 @@
  * An fast client, secure, efficient, and feature-rich AI-based 
  * facebook page chat-bot system for lakestonians for fast communicating
  * and auto-messaging system made in Javascript and NodeJS.
- * - If you encountered any bugs or issue, kindly create an issue, 
+ * - If you encourted any bugs or issue, kindly create an issue, 
  *   and wait for response of the developers.
  * - You can also create an issue for any bot enchancements, 
  * 	 and suggesstion, and our developers will kindly review.
@@ -26,27 +26,20 @@
  * You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
  *
  */
+ 
+const MainDataHandler = require("../../utils/DataHandler.js")
+const path = require("path")
 
-const fs = require('fs');
-
-class DataHandler {
+module.exports = (bot) => {
 	
-	getFileContentsAsync(path){
-		fs.readFile(path, (err, data) => { 
-			if(err) { 
-				console.error("An error occured while reading the file: " + err);
-			} 
-			return data.toString(); 
-		}); 
-	}
+	bot.on('postback:SCHOOL_UPDATES', (payload, chat) => {
+		const buttons = [
+			{ type: 'postback', title: 'Club Events', payload: 'CLUB_EVENTS' },
+			{ type: 'postback', title: 'School Updates', payload: 'SCHOOL_PROGRAMS' },
+			{ type: 'postback', title: 'SSLG Programs', payload: 'SSLG_PROGRAMS' }
+		];
+		chat.sendButtonTemplate("Choose topics below do you want to see:", buttons);
+	});
 	
-	getFileContentsSync(path){
-		try{ 
-			return fs.readFileSync(path).data.toString(); 
-		} catch (err) { 
-			console.error("An error occured while reading the file: " + err);
-		} 
-	}
+	
 }
-
-module.exports = DataHandler;

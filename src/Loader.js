@@ -79,6 +79,14 @@ getLogger().notice("Running update checker...");
 
 Updater.Check(require('../package.json').version, getLogger());
 
+bot.on('message', (payload, chat) => {
+	const text = payload.message.text;
+	chat.getUserProfile().then((user) => {
+		getLogger().setPrefix("Facebook Message").info(user.first_name + " " + user.last_name + ": " + text);
+	});
+});
+
+
 bot.start(8080); // Run Webhook in Port: 8080
 
 getLogger().notice("The bot has been established!");
