@@ -131,3 +131,10 @@ dist
 
 # Additional files
 package-lock.json
+
+# Replit files
+.env
+.replit
+replit.nix
+.config/
+.upm

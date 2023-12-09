@@ -27,18 +27,6 @@
  *
  */
 module.exports = (bot) => {
-	
-	bot.setGetStartedButton((payload, chat) => {
-		const buttons = [
-			{ type: 'postback', title: 'School Information', payload: 'SCHOOL_INFORMATION' },
-			{ type: 'postback', title: 'Enrollment Requirements', payload: 'SCHOOL_ENROLL' },
-			{ type: 'postback', title: 'School Updates', payload: 'SCHOOL_UPDATES' }
-		];
-		chat.getUserProfile().then((user) => {
-			chat.sendButtonTemplate(`Hi, ${user.first_name}! I'm Mr. AI Tonian!\nI'm your friendly neighbourhood chatbot.\nI'm here to assist you about your concerns in our school.\n\nChoose topic here below what do you want to talk.`, buttons);
-		});
-	});
-	
 	bot.hear('Hello', (payload, chat) => {
 		const buttons = [
 			{ type: 'postback', title: 'School Information', payload: 'SCHOOL_INFORMATION' },

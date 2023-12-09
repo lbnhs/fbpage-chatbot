@@ -39,18 +39,18 @@ module.exports = (bot) => {
 	
 	bot.on('postback:SCHOOL_ADDRESS', (payload, chat) => {
 		const buttons = [
-			{ type: 'web_url', title: 'Open Google Maps', url: 'https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FLawang%2BBato%2BNational%2BHigh%2BSchool%2C%2BValenzuela%2C%2BMetro%2BManila%2F%4014.7294276%2C120.9938561%2C18z%2Fdata%3D!4m6!3m5!1s0x3397b17f71f6fd1b%3A0x3442c8fb7481b19a!8m2!3d14.7296792!4d120.9938066!16s%252Fm%252F06zknph%3Ffbclid%3DIwAR0j4RSZDTRBZrqvsSGB10-UdnL7rkaGU4fRiWX8FeX9jUbKl1wRIzV-BbE&h=AT0yEREfPiRsYoZjSxyClgvZOBjEX1pVMGzFkuSouTNBSiLZ8zJ1O38YkGeIEoJSE2iXq08a_DjuxjRMVqWbu59HUtP08J3kSOxsLiefzz5dGOjwr9YZKiTMRT8mla5e8nkhLg' }
+			{ type: 'web_url', title: 'Open Google Maps', url: 'https://www.google.com/maps/place/Lawang+Bato+National+High+School,+Valenzuela,+Metro+Manila/@14.7294276,120.9938561,18z/data=!4m6!3m5!1s0x3397b17f71f6fd1b:0x3442c8fb7481b19a!8m2!3d14.7296792!4d120.9938066!16s%2Fm%2F06zknph?fbclid=IwAR0j4RSZDTRBZrqvsSGB10-UdnL7rkaGU4fRiWX8FeX9jUbKl1wRIzV-BbE' }
 		];
 		chat.sendButtonTemplate(`The school location address of Lawang Bato National School is on:\n\nMULAWINAN ST., LAWANG BATO, VALENZUELA CITY\n\nYou can click this button below to open the Google Maps to start navigating the school:`, buttons);
 	});
 	
 	bot.on('postback:SCHOOL_DIRECTORY', (payload, chat) => {
 		// Updating every school year changes..
-		chat.say(`These is the school directory of Lawang Bato National High School as of SY. 2023-2024:\n\nADMIN DEPARTMENT\nDr. Jonathan O. Lagdamen - Principal IV\nHazel M. Arellano - Assistant Principal SHS\nMarcela M. Pabunan - Assistant Principal JHS\nDerick Josef V. Dilla - Guidance Coordinator\nLoyd C. San Andres - School Clerk\n\nHEAD TEACHERS\nEdwin J. Bonifacio -  Filipino\nMarcela M. Pabunan -  AP\nMa. Therese C. Dinong -  Math\nMelinda P. Orenza - Science\nEditha R. Quibin - Tle\nLina Q. De Asis -  ESP\nArlene F. Sanz -  English\nRosana T. Soldevilla -  MAPEH`, { typing: true });
+		chat.say(`These are the school directory of Lawang Bato National High School as of SY. 2023-2024:\n\nADMIN DEPARTMENT\nDr. Jonathan O. Lagdamen - Principal IV\nHazel M. Arellano - Assistant Principal SHS\nMarcela M. Pabunan - Assistant Principal JHS\nDerick Josef V. Dilla - Guidance Coordinator\nLoyd C. San Andres - School Clerk\n\nHEAD TEACHERS\nEdwin J. Bonifacio -  Filipino\nMarcela M. Pabunan -  AP\nMa. Therese C. Dinong -  Math\nMelinda P. Orenza - Science\nEditha R. Quibin - Tle\nLina Q. De Asis -  ESP\nArlene F. Sanz -  English\nRosana T. Soldevilla -  MAPEH`, { typing: true });
 	});
 	
 	bot.on('postback:SCHOOL_REGULATIONS', (payload, chat) => {
 		// Update soon?
-		chat.say(`These are the school regulations must be AVOID while in-class:\n\n• Cutting of classes and tardiness\n• Failure to wear prescribed uniform\n• Wearing of earrings for the boys and more than a pair of earrings for the girls, outlandish hairstyles, painting of tattoo, over accessories and body piercing\n• Loitering and staying inside or outside the school during class hour\n• Spitting elsewhere\n• Bullying including physical, emotional, mental and cyber-bullying\n• No shorts allowed\n• Coloured shirt is not allowed\n• No slippers allowed\n• No vaping\n• No smoking\n\nSo far, these are the basic regulations in Lawang Bato National High School. If you want to talk or ask for concern, you may type your questions below, and our staff's will reply in a couple of days.`, { typing: true });
+		chat.say(`These are the school regulations must be AVOID while person or online in-class:\n\n• Cutting of classes and tardiness\n• Failure to wear prescribed uniform\n• Wearing of earrings for the boys and more than a pair of earrings for the girls, outlandish hairstyles, painting of tattoo, over accessories and body piercing\n• Loitering and staying inside or outside the school during class hour\n• Spitting elsewhere\n• Bullying including physical, emotional, mental and cyber-bullying\n• No shorts allowed\n• Coloured shirt is not allowed\n• No slippers allowed\n• No vaping\n• No smoking\n\nSo far, these are the basic regulations in Lawang Bato National High School. If you want to talk or ask for concern, you may type your questions below, and our staff's will reply in a couple of days.`, { typing: true });
 	});
 }
